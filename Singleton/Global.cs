@@ -9,7 +9,14 @@ public partial class Global : Node
     public static int Damage = 10;
     public static float Radius = 50.0f;
 
-    public override void _Ready()
+    // Info:
+    public static readonly (string path, float weight)[] enemies =
+    [
+        ("res://Enemy/EnemyBasic/EnemyBasic.tscn", .7f),
+        ("res://Enemy/EnemySpeedy/EnemySpeedy.tscn", .3f)
+    ];
+
+public override void _Ready()
     {
         if (Instance == null)
             Instance = this;

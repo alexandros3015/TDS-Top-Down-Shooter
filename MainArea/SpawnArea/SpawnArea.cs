@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Godot;
 // Range: 340 px
 
@@ -27,9 +28,27 @@ public partial class SpawnArea : Node2D
             GD.PushError("Timer not found.");
     }
 
+    private string PickEnemy()
+    {
+        var totalWeight = Global.enemies.Sum(e => e.weight);
+
+        var pick = _rng.RandfRange(0f, totalWeight);
+        var cumulative = 0f;
+
+        foreach (var e in Global.enemies)
+        {
+            cumulative += e.weight;
+            if (pick <= cumulative)
+                return e.path;
+        }
+
+        return Global.enemies[^1].path;
+    }
+
     private void TimerOnTimeout()
     {
-        var enemyScene = ResourceLoader.Load<PackedScene>("res://Enemy/EnemyBasic/EnemyBasic.tscn");
+        var enemyPath = PickEnemy();
+        var enemyScene = ResourceLoader.Load<PackedScene>(enemyPath);
         var enemy = enemyScene.Instantiate<Node2D>();
         AddSibling(enemy);
         enemy.Position = new Vector2(0f, _rng.RandfRange(SpawnMinRange, SpawnMaxRange));
