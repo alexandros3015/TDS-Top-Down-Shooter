@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djpyi1otejb5i"
-path="res://.godot/imported/skel.png-19b89c5ba5095862cfe98d4aebca84e5.ctex"
+uid="uid://0ix7jaknn35f"
+path="res://.godot/imported/EnemyShield.png-39ea8f727c17b3ddac1a5f8b969cb942.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Image/skel.png"
-dest_files=["res://.godot/imported/skel.png-19b89c5ba5095862cfe98d4aebca84e5.ctex"]
+source_file="res://Assets/Image/EnemyShield.png"
+dest_files=["res://.godot/imported/EnemyShield.png-39ea8f727c17b3ddac1a5f8b969cb942.ctex"]
 
 [params]
 
