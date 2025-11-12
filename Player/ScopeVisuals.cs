@@ -6,8 +6,15 @@ public partial class ScopeVisuals : Node
 {
     [Export] public HurtHandler HurtHandler;
     [Export] public Node2D Scope;
+    [Export] public AnimationPlayer AnimationPlayer;
 
     private Color _targetColor;
+
+    public override void _Ready()
+    {
+        HurtHandler.Shot += () => AnimationPlayer.Play("shoot");
+        HurtHandler.ShotNoAmmo += () => AnimationPlayer.Play("cant_shoot");
+    }
 
     public override void _Process(double delta)
     {

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bb2f4y86c6rs0"]
+[gd_scene load_steps=10 format=3 uid="uid://bb2f4y86c6rs0"]
 
 [ext_resource type="Texture2D" uid="uid://cmp1d675t086" path="res://Player/ScopePlaceholder.png" id="1_xmlvk"]
 [ext_resource type="Script" uid="uid://dvgnml320qf1w" path="res://Player/MovementHandler.cs" id="2_hg043"]
@@ -7,6 +7,112 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hg043"]
 radius = 25.0
+
+[sub_resource type="Animation" id="Animation_osf41"]
+resource_name = "shoot"
+length = 0.25
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.25, -0.25, 0, 0.041666668, -0.00066684186, 0.2, -0.0049734088, 0.008333333, 0.095, -0.055, 0.25036678, -0.13333333, 0.040045828, 0.25, 0),
+"times": PackedFloat32Array(0, 0.033333335, 0.23333332)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.25, -0.25, 0, 0.041666668, 6.67274e-05, 0.2, -0.0049734088, 0.008333333, 0.095, -0.055, 0.25036678, -0.13333333, 0.040045828, 0.25, 0),
+"times": PackedFloat32Array(0, 0.033333335, 0.23333332)
+}
+
+[sub_resource type="Animation" id="Animation_of6np"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.25, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.25, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.125, 0, 0.125, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.125, 0, 0.125, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.125, 0, 0.125, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_open4"]
+resource_name = "cant_shoot"
+length = 0.25
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 2),
+"points": PackedFloat32Array(-0.0013193525, -0.125, 0, 0.06666667, 0.0024675187, 0.37374347, -0.033333335, 0.007402569, 0.030515162, -0.006776718, -0.30235663, -0.016666668, 0.03397668, 0.013888888, -0.028313898, 0, -0.049999997, 0.0060832035, 0, 0),
+"times": PackedFloat32Array(0, 0.06666667, 0.16666667, 0.25)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_of6np"]
+_data = {
+&"RESET": SubResource("Animation_of6np"),
+&"cant_shoot": SubResource("Animation_open4"),
+&"shoot": SubResource("Animation_osf41")
+}
 
 [node name="PlayerScope" type="Node2D"]
 
@@ -31,7 +137,14 @@ one_shot = true
 wait_time = 0.06
 one_shot = true
 
-[node name="ScopeVisuals" type="Node" parent="." node_paths=PackedStringArray("HurtHandler", "Scope")]
+[node name="ScopeVisuals" type="Node" parent="." node_paths=PackedStringArray("HurtHandler", "Scope", "AnimationPlayer")]
 script = ExtResource("4_osf41")
 HurtHandler = NodePath("../HurtHandler")
 Scope = NodePath("../Sprite2D")
+AnimationPlayer = NodePath("AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScopeVisuals"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_of6np")
+}
