@@ -12,21 +12,17 @@ public partial class ScopeVisuals : Node
 
     public override void _Ready()
     {
+        // connect to signals to play animations
         HurtHandler.Shot += () => AnimationPlayer.Play("shoot");
         HurtHandler.ShotNoAmmo += () => AnimationPlayer.Play("cant_shoot");
     }
 
     public override void _Process(double delta)
     {
-        if (HurtHandler.CanShoot)
-        {
-            _targetColor = Colors.White;
-        }
-        else
-        {
-            _targetColor = new Color(1, 1, 1, 0.5f);
-        }
+        // set the target color if you can shoot or not
+        _targetColor = HurtHandler.CanShoot ? Colors.White : new Color(1, 1, 1, 0.5f);
 
+        // LERP
         Scope.Modulate = Scope.Modulate.Lerp(_targetColor, (float)(delta * 15));
     }
 }
