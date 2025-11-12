@@ -15,38 +15,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_mlc1t")
 
-[node name="JoinGame" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -46.5
-offset_top = -11.5
-offset_right = 46.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 24
-text = "Start Game"
-script = ExtResource("1_otibh")
-
-[node name="CloseGame" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -8.0
-offset_top = -8.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_font_sizes/font_size = 16
-text = "Close Game"
-script = ExtResource("2_cruaa")
-
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 5
@@ -57,3 +25,30 @@ offset_right = 128.0
 offset_bottom = 128.0
 grow_horizontal = 2
 texture = ExtResource("3_b76km")
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -16.0
+offset_right = 74.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="JoinGame" type="Button" parent="Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Start Game"
+script = ExtResource("1_otibh")
+
+[node name="CloseGame" type="Button" parent="Buttons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 16
+text = "Close Game"
+script = ExtResource("2_cruaa")
