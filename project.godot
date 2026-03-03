@@ -14,7 +14,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="TDS (top down shooter)"
+config/name="TDS (Top Down Shooter)"
 run/main_scene="uid://chvllpuakyy8q"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 boot_splash/image="uid://baopm43h7a3j4"
