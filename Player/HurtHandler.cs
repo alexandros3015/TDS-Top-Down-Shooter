@@ -69,12 +69,10 @@ public partial class HurtHandler : Area2D
             return;
         }
         
-        GD.Print("Starting Cooldown Timer");
         CanShoot = false;
         _timer.Start();
         EmitSignalShot();
     
-        GD.Print("Starting Duration Timer");
         CollisionShape.Disabled = false;
         _durationTimer.Start();
     }

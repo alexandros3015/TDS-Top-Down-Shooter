@@ -27,7 +27,7 @@ public partial class DeathArea : Node2D
             GD.PushError("HealthHandler not found.");
         else
         {
-            Global.Health -= healthHandler.CurrentHealth;
+            Global.Health -= (int)healthHandler.CurrentHealth;
             healthHandler.Die();
             
             GD.Print($"Health of base: {Global.Health}");

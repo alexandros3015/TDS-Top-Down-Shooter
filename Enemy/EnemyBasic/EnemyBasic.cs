@@ -1,3 +1,4 @@
+using System;
 using Godot;
 
 namespace tdstopdownshooter.Enemy.EnemyBasic;
@@ -23,9 +24,11 @@ public partial class EnemyBasic : Node2D
             GD.PushError($"Missing One Or More Components In {GetPath()}");
             return;
         }
+        
+        var health  =(int)Math.Floor(Math.Pow(1.2, Global.Difficulty) + 100);
 
-        Health.MaximumHealth = BaseHealth;
-        Health.CurrentHealth = BaseHealth;
+        Health.MaximumHealth = health;
+        Health.CurrentHealth = health;
         Movement.Speed = Speed;
         Health.UpdateProgressBar();
     }

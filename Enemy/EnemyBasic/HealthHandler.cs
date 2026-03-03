@@ -6,13 +6,14 @@ namespace tdstopdownshooter.Enemy.EnemyBasic;
 [GlobalClass]
 public partial class HealthHandler : Node
 {
-    [Export] public int MaximumHealth = 100;
-    [Export] public int CurrentHealth = 100;
+    [Export] public long MaximumHealth = 100;
+    [Export] public long CurrentHealth = 100;
 
     private ProgressBar _progressBar;
     
     public override void _Ready()
     {
+        
         _progressBar = GetNode<ProgressBar>("../EnemyHpBar");
 
         if (_progressBar != null)
