@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dpestm2x54b5a"]
+
+[ext_resource type="PackedScene" uid="uid://ciugiajkkmue0" path="res://Enemy/EnemyBasic/EnemyBasic.tscn" id="1_mbcta"]
+
+[node name="EnemyBig" unique_id=287248257 instance=ExtResource("1_mbcta")]
+BaseHealth = 150
+Speed = 30.0

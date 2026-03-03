@@ -13,8 +13,9 @@ public partial class Global : Node
     // Info:
     public static readonly (string path, float weight)[] Enemies =
     [
-        ("res://Enemy/EnemyBasic/EnemyBasic.tscn", .7f),
-        ("res://Enemy/EnemySpeedy/EnemySpeedy.tscn", .3f)
+        ("res://Enemy/EnemyBasic/EnemyBasic.tscn", .6f),
+        ("res://Enemy/EnemySpeedy/EnemySpeedy.tscn", .2f),
+        ("res://Enemy/EnemyBig/EnemyBig.tscn", .2f),
     ];
 
 public override void _Ready()
