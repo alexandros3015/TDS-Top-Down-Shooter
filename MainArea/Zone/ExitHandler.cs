@@ -9,10 +9,11 @@ public partial class ExitHandler : Node
         {
             Global.Save();
             Input.MouseMode = Input.MouseModeEnum.Visible;
+            GetTree().SetPause(false);
             GetTree().ChangeSceneToFile("res://MainMenu/MainMenu.tscn");
         }
         
-        else if (Input.IsActionJustPressed("Shop"))
+        else if (Input.IsActionJustPressed("Shop") && Global.Health > 0)
         {
             Global.Save();
             Input.MouseMode = Input.MouseModeEnum.Visible;

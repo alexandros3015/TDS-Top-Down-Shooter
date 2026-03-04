@@ -32,5 +32,21 @@ public partial class DeathArea : Node2D
             
             GD.Print($"Health of base: {Global.Health}");
         }
+
+        if (Global.Health > 0) return;
+        
+        var node = GetNode<Label>("../UIDisplay/GameOver/Label");
+        Input.MouseMode = Input.MouseModeEnum.Visible;
+        
+        Global.Radius = 0;
+        Global.Money = 0;
+        Global.Difficulty = 0;
+        Global.Health = 1000;
+        Global.Cooldown = 0;
+        Global.Damage = 0;
+        
+        node.Visible = true;
+        DirAccess.RemoveAbsolute("user:///savegame.save");
+        GetTree().SetPause(true);
     }
 }
