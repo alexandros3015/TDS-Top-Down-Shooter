@@ -8,7 +8,7 @@ public partial class VisionHandler : Node
     private float _factor;
     public override void _Process(double delta)
     {
-        _factor += 0.1f;
-        ShadowSkeleton.SetSelfModulate(new Color(0 + _factor, 0.0f, 0.0f, 0.0f));
+        _factor += 0.0001f;
+        ShadowSkeleton.Modulate = new Color(0.0f, 0.0f, 0.0f, float.Min(_factor, 1.0f));
     }
 }

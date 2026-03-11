@@ -14,7 +14,7 @@ public partial class Global : Node
     public static readonly (string path, float weight)[] Enemies =
     [
         ("res://Enemy/EnemyBasic/EnemyBasic.tscn", .5f),
-        ("res://Enemy/EnemySpeedy/EnemySpeedy.tscn", .25f),
+        ("res://Enemy/EnemySpeedy/EnemySpeedy.tscn", .25f), 
         ("res://Enemy/EnemyBig/EnemyBig.tscn", .20f),
         ("res://Enemy/EnemyShadow/EnemyShadow.tscn", .05f),
     ];
