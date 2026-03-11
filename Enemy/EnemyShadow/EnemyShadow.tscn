@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dsmdm73a07r42"]
+
+[ext_resource type="PackedScene" uid="uid://ciugiajkkmue0" path="res://Enemy/EnemyBasic/EnemyBasic.tscn" id="1_5s3fd"]
+[ext_resource type="Script" uid="uid://dih5sr363le75" path="res://Enemy/EnemyShadow/VisionHandler.cs" id="2_xoei7"]
+
+[node name="EnemyShadow" unique_id=544875829 instance=ExtResource("1_5s3fd")]
+modulate = Color(1, 1, 1, 0)
+
+[node name="VisionHandler" type="Node" parent="." index="5" unique_id=1019554592]
+script = ExtResource("2_xoei7")
