@@ -21,6 +21,6 @@ public partial class HurtBox : Area2D
     {
         if (area is not HurtHandler handler) return;
         if (handler.CollisionShape.Disabled) return;
-        _healthHandler.TakeDamage( Math.Max(10, Global.Damage * 10) );
+        _healthHandler.TakeDamage( long.Max(10, Global.Damage * Global.Damage * 2));
     }
 }
