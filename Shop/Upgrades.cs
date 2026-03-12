@@ -26,11 +26,11 @@ public partial class Upgrades : VBoxContainer
         _cooldownCost = Function(Global.Cooldown);
         _radiusCost = Function(Global.Radius) * 2;
         
-        DamageButton.Text = $"Damage ({Global.Damage}): ${_damageCost}";
-        CooldownButton.Text = $"Cooldown ({Global.Cooldown}): ${_cooldownCost}";
-        RadiusButton.Text = $"Radius ({Global.Radius}): ${_radiusCost}";
+        DamageButton.Text = $"Damage ({Global.Damage}): ${_damageCost.ToString("N0")}";
+        CooldownButton.Text = $"Cooldown ({Global.Cooldown}): ${_cooldownCost.ToString("N0")}";
+        RadiusButton.Text = $"Radius ({Global.Radius}): ${_radiusCost.ToString("N0")}";
 
-        MoneyLabel.Text = $"Money: ${Global.Money}";
+        MoneyLabel.Text = $"Money: ${Global.Money.ToString("N0")}";
         
         Global.Save();
     }

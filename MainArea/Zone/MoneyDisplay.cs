@@ -5,6 +5,7 @@ public partial class MoneyDisplay : Label
 {
     public override void _Process(double delta)
     {
-        Text = $"Money: ${Global.Money}";
+        var msg = Global.Money.ToString("N0");
+        Text = $"Money: ${msg}";
     }
 }

@@ -25,7 +25,7 @@ public partial class EnemyBasic : Node2D
             return;
         }
         
-        var health = (long)Math.Floor(Math.Pow(1.15, Global.Difficulty) + 100);
+        var health = (long)Math.Floor(Math.Pow(1.1, Global.Difficulty) + 100);
 
         Health.MaximumHealth = health;
         Health.CurrentHealth = health;
