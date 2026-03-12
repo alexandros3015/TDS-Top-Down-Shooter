@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Numerics;
 
 namespace tdstopdownshooter.Shop;
 
@@ -10,13 +11,13 @@ public partial class Upgrades : VBoxContainer
     [Export] public Button RadiusButton;
     [Export] public Label MoneyLabel;
 
-    private long _damageCost = 5;
-    private long _cooldownCost = 5;
-    private long _radiusCost = 5;
+    private BigInteger _damageCost = 5;
+    private BigInteger _cooldownCost = 5;
+    private BigInteger _radiusCost = 5;
 
-    private static int Function(int timesBought)
+    private static BigInteger Function(int timesBought)
     {
-        return (int)Math.Round(5.0 * Math.Pow(5.0, 0.22 * timesBought), MidpointRounding.AwayFromZero);
+        return (BigInteger)Math.Round(5.0 * Math.Pow(5.0, 0.22 * timesBought), MidpointRounding.AwayFromZero);
     }
 
     private void UpdateData()

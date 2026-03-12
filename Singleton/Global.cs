@@ -1,10 +1,11 @@
  using Godot;
+ using System.Numerics;
 
 public partial class Global : Node
 {
     private static Global Instance { get; set; }
     public static int Difficulty;
-    public static long Money;
+    public static BigInteger Money;
     public static int Health = 1000;
     public static int Cooldown = 0;
     public static int Damage = 0;

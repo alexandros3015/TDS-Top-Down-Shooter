@@ -1,4 +1,5 @@
 using System;
+using System.Numerics;
 using Godot;
 
 namespace tdstopdownshooter.Enemy.EnemyBasic;
@@ -43,7 +44,8 @@ public partial class HealthHandler : Node
 
     private void Kill()
     {
-        Global.Money += (int)Math.Round(5.0 * Math.Pow(5.0, 0.2 * Global.Difficulty), MidpointRounding.AwayFromZero);
+        var reward = 5 * BigInteger.Pow(5, Global.Difficulty / 5);
+        Global.Money += reward;
         Global.Difficulty++;
         GD.Print($"New difficulty: {Global.Difficulty}");
         
