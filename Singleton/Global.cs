@@ -33,7 +33,7 @@ public override void _Ready()
         using var saveFile = FileAccess.Open("user://savegame.save", FileAccess.ModeFlags.Write);
 
         saveFile.StoreVar(Difficulty);
-        saveFile.StoreVar(Money);
+        saveFile.StoreVar(Money.ToString());
         saveFile.StoreVar(Health);
         saveFile.StoreVar(Cooldown);
         saveFile.StoreVar(Damage);
@@ -52,7 +52,10 @@ public override void _Ready()
             return;
 
         Difficulty = (int)saveFile.GetVar();
-        Money = (long)saveFile.GetVar();
+        
+        var moneyStr = (string)saveFile.GetVar();
+        Money = BigInteger.Parse(moneyStr);
+        
         Health = (int)saveFile.GetVar();
         Cooldown = (int)saveFile.GetVar();
         Damage = (int)saveFile.GetVar();
