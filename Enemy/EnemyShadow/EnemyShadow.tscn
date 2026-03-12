@@ -115,8 +115,8 @@ animations = [{
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_srlfi")
 animation = &"default"
-autoplay = ""
-frame_progress = 0.0638701
+autoplay = "default"
+frame_progress = 0.22095412
 
 [node name="VisionHandler" type="Node" parent="." index="5" unique_id=1019554592 node_paths=PackedStringArray("ShadowSkeleton")]
 script = ExtResource("2_xoei7")

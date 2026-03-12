@@ -31,7 +31,7 @@ public partial class HealthHandler : Node
         _progressBar.Value = CurrentHealth;
     }
     
-    public void TakeDamage(int damage)
+    public void TakeDamage(long damage)
     {
         CurrentHealth -= damage;
         

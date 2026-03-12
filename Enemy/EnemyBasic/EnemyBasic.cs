@@ -4,7 +4,7 @@ using Godot;
 namespace tdstopdownshooter.Enemy.EnemyBasic;
 public partial class EnemyBasic : Node2D
 {
-    [Export] public int BaseHealth = 100;
+    [Export] public long BaseHealth = 100;
     [Export] public float Speed = 50f;
     
     // ReSharper disable MemberCanBePrivate.Global
@@ -25,7 +25,7 @@ public partial class EnemyBasic : Node2D
             return;
         }
         
-        var health  =(int)Math.Floor(Math.Pow(1.2, Global.Difficulty) + 100);
+        var health = (long)Math.Floor(Math.Pow(1.15, Global.Difficulty) + 100);
 
         Health.MaximumHealth = health;
         Health.CurrentHealth = health;

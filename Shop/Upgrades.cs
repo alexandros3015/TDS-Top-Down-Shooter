@@ -16,7 +16,7 @@ public partial class Upgrades : VBoxContainer
 
     private static int Function(int timesBought)
     {
-        return (int)Math.Round(5.0 * Math.Pow(5.0, 0.3 * timesBought), MidpointRounding.AwayFromZero);
+        return (int)Math.Round(5.0 * Math.Pow(5.0, 0.22 * timesBought), MidpointRounding.AwayFromZero);
     }
 
     private void UpdateData()
