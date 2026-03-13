@@ -13,7 +13,7 @@ public partial class ExitHandler : Node
             GetTree().ChangeSceneToFile("res://MainMenu/MainMenu.tscn");
         }
         
-        else if (Input.IsActionJustPressed("Shop") && Global.Health > 0)
+        else if (Input.IsActionJustPressed("Shop") && Global.Health > 0 && GetTree().Paused == false)
         {
             Global.Save();
             Input.MouseMode = Input.MouseModeEnum.Visible;
